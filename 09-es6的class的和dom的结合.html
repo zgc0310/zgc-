@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border: 10px solid aqua;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="circle"> 王菲喜欢吃啥 </div>
+  </section>
+  <script>
+
+
+    /*
+    1 定义一个父类 -> 基类 
+      1 圆圈 边框 蓝色 
+      2 父类有点击事件 
+     */
+
+
+    //  1 父类
+    class Element {
+      // eleType 元素的类型
+      constructor(eleType, text) {
+        const ele = document.createElement(eleType);
+        ele.classList.add("circle");
+        ele.innerText = text;
+        this.node = ele;
+      }
+      // 方法 "section"
+      appendTo(parentSelector) {
+        document.querySelector(parentSelector).appendChild(this.node);
+      }
+      // 方法 click => 绑定事件
+      click(fn) {
+        // click这个方法只是做了一件事 绑定事件 
+        this.node.onclick = function () {
+          fn();
+        }
+      }
+    }
+
+    // 有时候 有时候  宁愿选择榴莲不放手 
+    const divObj = new Element("div", "榴莲");
+    // 将div 插入到  section 中 
+    divObj.appendTo("section");
+
+    // 2 子类 创建图片
+    class ImgElement extends Element {
+      constructor(src) {
+        // Element 的构造函数 
+        super("img", "");
+        // this.node  就有值了 
+        this.node.src = src;
+      }
+    }
+
+    const imgObj = new ImgElement("./imgs/1.png");
+    imgObj.appendTo("section");
+
+    const func = function () {
+      console.log("点击");
+    }; 
+    // click 只是负责了 绑定事件
+    // 而事件的触发 是 多次 由 func 被调用实现 
+    imgObj.click(func)
+
+
+
+
+  </script>
+</body>
+
+</html>

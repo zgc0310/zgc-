@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /* 
+    有函数有传递参数,那么就使用参数
+    但是 如果 这个函数没有传递参数的话,那么就使用默认值 
+     */
+
+    // function eat(food) {
+    //   if (food) {
+    //   } else {
+    //     // 没有传递参数
+    //     food = "🍚";
+    //   }
+    //   console.log(food);
+    // }
+
+    // es6 函数的形参默认值 
+    function eat(food = "🍚") {
+      console.log(food);
+    }
+
+    eat("🥒"); // 🥒
+    eat();// 🍚
+
+
+  </script>
+
+</body>
+
+</html>

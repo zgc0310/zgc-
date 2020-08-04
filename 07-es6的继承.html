@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+
+    class Person {
+      constructor(name, height, weight) {
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+      }
+      say() {
+        console.log("=====");
+        console.log(this);
+        console.log("=====");
+
+      }
+    }
+
+    // Student.prototype = Person.prototype;
+
+    // Student 要继承 Person 的方法 
+    class Student extends Person {
+      // 构造函数内
+      constructor(name, height, weight, color) {
+        // Person.call(this,name,height,weight)  es5 代码的写法 子类可以继承父类的属性
+        super(name, height, weight);
+        this.color = color;
+      } 
+    }
+
+    const s1 = new Student("学生", 100, 200, "yellow");
+    s1.say();
+
+
+
+  </script>
+</body>
+
+</html>

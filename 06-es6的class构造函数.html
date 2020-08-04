@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // function Person() {
+
+    // }
+
+
+    class Person {
+      // 如果属性值是固定写死,可以使用这种方式
+      type = "人类";
+      // 构造函数   相等于之前的es6的构造函数 也就是上面的function Person 
+      constructor(name, height, weight) {
+        // 通过 属性值是动态传入进来, 可以使用构造函数的方式
+        this.name = "name";
+        this.height = height;
+        this.weight = weight;
+      }
+    }
+
+    const p1 = new Person("人类", 100, 200);
+    console.log(p1);
+
+
+
+  </script>
+</body>
+
+</html>

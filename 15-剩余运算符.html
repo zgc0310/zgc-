@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function show(a,  ...all) {
+      // 方便的拿到第一个参数 和 剩下的所有参数
+      console.log(a);// 111
+      console.log(all);// [ 222,333,444,555,666,777] 
+    }
+
+    show(111, 222, 333, 444, 555, 666, 777)
+
+
+  </script>
+</body>
+
+</html>

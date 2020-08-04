@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section></section>
+  <script src="./lib/jquery.js"></script>
+  <script>
+
+    let list = [
+      {
+        name: "福建"
+      },
+      {
+        name: "广东",
+        children: [
+          {
+            name: "广州",
+            children: [
+              {
+                name: "天河",
+                children: [
+                  {
+                    name: "吉山"
+                  }
+                ]
+              },
+              {
+                name: "白云"
+              }
+            ]
+          },
+          {
+            name: "深圳",
+            children: [
+              {
+                name: "南山区"
+              },
+              {
+                name: "龙华区"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+
+
+    list.forEach(v1 => {
+      // 1 广东
+      const name1 = v1.name;
+      $("section").append(`<div>${name1}</div>`);
+      if (v1.children) {
+        v1.children.forEach(v2 => {
+          // 2 广州 或者 深圳 
+          const name2 = v2.name;
+          $("section").append(`<div>${name2}</div>`);
+          if (v2.children) {
+            v2.children.forEach(v3 => {
+              // 3 天河 白云 || 南山  龙华  
+              const name3 = v3.name;
+              $("section").append(`<div>${name3}</div>`);
+              if (v3.children) {
+                v3.children.forEach(v4 => {
+                  const name4 = v4.name;
+                  $("section").append(`<div>${name4}</div>`);
+                })
+              }
+            })
+          }
+        })
+      }
+    })
+
+
+
+  </script>
+</body>
+
+</html>

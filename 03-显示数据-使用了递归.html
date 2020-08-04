@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section></section>
+  <script src="./lib/jquery.js"></script>
+  <script>
+
+    let list = [
+      {
+        name: "福建"
+      },
+      {
+        name: "广东",
+        children: [
+          {
+            name: "广州",
+            children: [
+              {
+                name: "天河",
+                children: [
+                  {
+                    name: "吉山"
+                  }
+                ]
+              },
+              {
+                name: "白云"
+              }
+            ]
+          },
+          {
+            name: "深圳",
+            children: [
+              {
+                name: "南山区"
+              },
+              {
+                name: "龙华区"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+
+
+    // 知道 list 是谁 
+    // if 里面的判断是做什么用的
+    function fn(arr) {
+      if (arr) {
+        arr.forEach(v => {
+          $("section").append(`<div>${v.name}</div>`);
+          fn(v.children);
+        })
+      }
+    }
+
+    fn(list);
+
+
+  </script>
+</body>
+
+</html>

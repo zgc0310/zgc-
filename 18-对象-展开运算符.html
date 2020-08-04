@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    const obj = {
+      n1: 1,
+      n2: 2,
+      n3: 3,
+      n4: 4
+    }
+
+    // 想要获取到 除了n3 之外的属性=>新的对象
+    // { n1,n2,n4 }
+
+    const {n3,...other}=obj;
+    // other =  { n1,n2,n4 }
+    console.log(other); 
+
+
+
+  </script>
+</body>
+
+</html>

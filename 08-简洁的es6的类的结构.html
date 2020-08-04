@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    class Person {
+      constructor(name, height, weight) {
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+      }
+      say() {
+        console.log("=====");
+        console.log(this);
+        console.log("=====");
+      }
+    }
+
+    class Student extends Person {
+      constructor(name, height, weight, color) {
+        super(name, height, weight);
+        this.color = color;
+      }
+    }
+
+    const s1 = new Student("学生", 100, 200, "yellow");
+    s1.say(); 
+
+
+
+  </script>
+</body>
+
+</html>

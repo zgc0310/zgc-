@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // function 看起来会认为是一个普通的函数 结构没有那么清晰
+    // function Person(){
+    //   this.name=123;
+    // }
+
+    // const p1=new Person();
+    // console.log(p1);
+
+
+    // es6 的class
+    // class 关键字不能改
+    // class 名称 Person 首字母大写 
+
+    class Person {
+      name = "123";
+      say() { }
+      // say = function () {
+      //   console.log(this); // this 还是实例 
+      // }
+    }
+
+    // class Person {
+    // name : "123"  , //  不对的 
+    // }
+
+
+    const p1 = new Person();
+    const p2 = new Person();
+
+    console.log(p1.say === p2.say);
+  </script>
+</body>
+
+</html>

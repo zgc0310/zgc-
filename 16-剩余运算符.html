@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    const arr = [1, 2, 3, 4, 5];
+
+    // 复制一份新的数组 for循环 
+    // const newArr = arr.map(v => v);
+
+    // concat 
+    // const newArr = [].concat(arr); 
+
+    const newArr = [...arr];
+    // const newArr = [arr[0],arr[1],arr[2],......];
+    newArr.push(6);
+
+    console.log("旧", arr);
+    console.log("新", newArr);
+
+
+  </script>
+</body>
+
+</html>
